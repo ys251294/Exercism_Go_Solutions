@@ -16,7 +16,8 @@
 
 !README.md
 !LICENSE
-
+!HELP.md
+!*/*/.exercism/*
 # !Makefile
 
 # ...even if they are in subdirectories
