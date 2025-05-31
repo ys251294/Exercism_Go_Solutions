@@ -14,17 +14,16 @@ func CollatzConjecture(n int) (int, error) {
 		return steps, nil
 	}
 
-	if n%2 == 0 {
-		n /= 2
-		steps++
-		stepsTemp, _ := CollatzConjecture(n)
-		steps = steps + stepsTemp
+	for n > 1 {
+		if n%2 == 0 {
+			n /= 2
+			steps++
 
-	} else {
-		n = n*3 + 1
-		steps++
-		stepsTemp, _ := CollatzConjecture(n)
-		steps = steps + stepsTemp
+		} else {
+			n = n*3 + 1
+			steps++
+		}
 	}
+
 	return steps, nil
 }
