@@ -5,5 +5,5 @@ import "time"
 
 // AddGigasecond add 1000 million seconds to give time.
 func AddGigasecond(t time.Time) time.Time {
-	return t
+	return t.Add(time.Second * 1e9)
 }
