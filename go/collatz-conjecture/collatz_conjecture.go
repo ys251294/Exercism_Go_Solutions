@@ -1,5 +1,30 @@
 package collatzconjecture
 
+import (
+	"errors"
+)
+
 func CollatzConjecture(n int) (int, error) {
-	panic("Please implement the CollatzConjecture function")
+	//panic("Please implement the CollatzConjecture function")
+	steps := 0
+
+	if n <= 0 {
+		return 0, errors.New("error: n cannot be less than or zero")
+	} else if n == 1 {
+		return steps, nil
+	}
+
+	if n%2 == 0 {
+		n /= 2
+		steps++
+		stepsTemp, _ := CollatzConjecture(n)
+		steps = steps + stepsTemp
+
+	} else {
+		n = n*3 + 1
+		steps++
+		stepsTemp, _ := CollatzConjecture(n)
+		steps = steps + stepsTemp
+	}
+	return steps, nil
 }
